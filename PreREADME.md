@@ -9,11 +9,6 @@ Version: 0.1
 
 
 
-
-
-![nsmhjv9](https://cloud.githubusercontent.com/assets/14175217/10359096/11544940-6dd0-11e5-846a-88a2eaf45344.jpg)
-
-
 <font color="Blue">**Table of Contents**</font>
 
 **Version Information**..........................................................................................3
