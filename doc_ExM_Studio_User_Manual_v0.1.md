@@ -228,17 +228,14 @@ The initial computation of displacement produces a set of possible displacements
 ##### Step 4: Threshold Displacement
 
 Each displacement has a reliability score in range [0 1]. This step replaces displacements that have a low reliability score with the mechanical displacements.
-
 - Operation to run
   - `--displthres`
-
 - Threshold which displacements must meet
   - `--threshold` good starting value is 0.7; affects accuracy of algorithm
 
 ##### Step 5: Place Tiles
 
 Final displacement optimization; makes displacements globally consistent meaning any cycle of displacements will sum to 0. Currently uses the minimum spanning tree algorithm.
-
 - Operation to run
   - `--placetiles`
 
