@@ -7,64 +7,6 @@ Version: 0.1
 
 
 
-
-
-
-
-
-
-
-
-
-
-**Table of Contents**
-
-**Version Information**         3
-
-**Key Terms and Abbreviations**         3
-
-**Introduction**         4
-
-**System requirements**         4
-
-Hardware        4
-
-Software        5
-
-Operatingsystem        5
-
-External libraries and driver        5
-
-Additional applications        5
-
-**Installation**         6
-
-Deconvolution        6
-
-NVIDIA driver        6
-
-CUDA Toolkit        7
-
-NVIDIA cuDNN        **7**
-
-NVIDIA NCCL        8
-
-Software package for PSF Generation        8
-
-ExM deconvolution        8
-
-MATLAB        9
-
-Stitching        9
-
-TeraStitcher        9
-
-
-
-
-
-
-
 # **Version Information**
 
 | Date | Version | Author(s) |
@@ -109,11 +51,11 @@ This chapter describes system requirements for ExM Studio.
 This table shows our recommended requirements of hardware for ExM Studio. We provide a server which satisfies the hardware requirements. Currently we support Pascal architecture of NVIDIA GPUs or newer.
 
 | Processor | 1x Intel Xeon Gold 6128, 3.4GHz, 6Core |
-| --- | --- |
+| :---: | :---: |
 | GPU | 1x NVIDIA RTX 2080 |
 | RAM | 8x 16GB Memory |
 | Storage | 1x M.2 512GB SSD (For OS) |
-| 2x SATA 4TB HDD (For Data) |
+|         | 2x SATA 4TB HDD (For Data) |
 
 The memory size depends on image size you process with ExM Studio. The stitching application takes an especially huge memory size. For example, supposing that one 2D tiff image is 10MB and the grid dimension of FoVs is 9x9 on xy plane and 100z−planes are processed, the expected maximum of memory usage is around 100GB at most.
 
@@ -190,29 +132,8 @@ This section describes how to install NVIDIA driver, CUDA toolkit library, softw
 
 NVIDIA driver is a kernel module for controlling GPUs. If you don&#39;t have NVIDIA driver, please install it by following these instructions.
 
-1. Download an installation script for the latest driver at NVIDIA webpage
-
-1.
-  1. Open NVIDIA DOWNLOAD DRIVERS page: [https://www.nvidia.com/Download/index.aspx](https://www.nvidia.com/Download/index.aspx) on web browser
-  2. Select your own GPU type, for example, RTX-2080:
-
-1.
-  1.
-    1. Select &#39;GeForce&#39; in a pull-down menu of &#39;Product Type&#39;
-    2. Select &#39;GeForce RTX 20 Series&#39; in a pull-down menu of &#39;Product Series&#39;
-    3. Select &#39;GeForce RTX 2080&#39; in a pull-down menu of &#39;Product&#39;
-    4. Select &#39;Linux 64-bit&#39; in a pull-down menu of &#39;Operating System&#39;
-    5. Select &#39;English (US)&#39; in a pull-down menu of &#39;Language&#39;
-    6. Click &#39;SEARCH&#39; button
-  2. Click &#39;DOWNLOAD&#39; button, and open a new page for download
-  3. Click &#39;DOWNLOAD&#39; button
-2. Stop X server if you use GUI on Linux
-$ sudo init 3
-3. Run the installation script
-$ sudo sh NVIDIA-Linux-x86\_xxx.xx.run  (xxx.xx is driver version)
-4. Reboot a server
-$ sudo reboot
-
+1. Download an installation script fro the latest driver at NVIDIA webpage
+  1. Open NVIDIA DOWNLOAD DRIVERS page: https://www.nvidia.com/Download/index.aspx
 ### **CUDA Toolkit**
 
 CUDA Toolkit is provided by NVIDIA. ExM Studio runs with CUDA Toolkit 9.1 and 9.2. Here, CUDA Toolkit 9.1 installation is explained, as an example. If you have already installed other version of CUDA Toolkit, please note that the installed path is /usr/local/cuda or /usr/local/cuda-9.1.
