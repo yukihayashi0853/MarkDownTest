@@ -159,11 +159,11 @@ We verified cuDNN at least 7.3.
     1. Click &#39;Download cuDNN v7.3.0 [Sept 19, 2018], for CUDA 9.0&#39;
     1. Click &#39;cuDNN v7.3.0 Library for Linux&#39; and get &#39;cudnn-9.0-linux-x64-v7.3.0.29.tgz&#39;
 1. Install the downloaded tar file
-`$ tar xvzf cudnn-9.0-linux-x64-v7.3.0.29.tgz
-$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
-$ sudo cp cuda/lib64/libcudnn\* /usr/local/cuda/lib64
-$ sudo chmod a+r /usr/local/cuda/include/cudnn.h
-$ sudo chmod a+r /usr/local/cuda/lib64/libcudnn\*`
+- `$ tar xvzf cudnn-9.0-linux-x64-v7.3.0.29.tgz`
+- `$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include`
+- `$ sudo cp cuda/lib64/libcudnn\* /usr/local/cuda/lib64`
+- `$ sudo chmod a+r /usr/local/cuda/include/cudnn.h`
+- `$ sudo chmod a+r /usr/local/cuda/lib64/libcudnn\*`
 
 ### **NVIDIA NCCL**
 
@@ -180,11 +180,11 @@ We verified NCCL at least 2.3.4.
     1. Click &#39;Download NCCL v2.3.4, for CUDA 9.0, Sept 19, 2018&#39;
     1. Click &#39;NCCL 2.3.4 O/S agnostic and CUDA 9.0&#39; and get &#39;nccl\_2.3.4-1+cuda9.0\_x86\_64.txz&#39;
 1. Install the downloaded tar file
-`$ tar xvJf nccl\_2.3.4-1+cuda9.0\_x86\_64.txz
-$ sudo cp nccl\_2.3.4-1+cuda9.0\_x86\_64/include/nccl.h /usr/local/cuda/include
-$ sudo cp nccl\_2.3.4-1+cuda9.0\_x86\_64/lib/libnccl.so\* /usr/local/cuda/lib64
-$ sudo chmod a+r /usr/local/cuda/include/nccl.h
-$ sudo chmod a+r /usr/local/cuda/lib64/libnccl.so\*`
+ - `$ tar xvJf nccl\_2.3.4-1+cuda9.0\_x86\_64.txz`
+ - `$ sudo cp nccl\_2.3.4-1+cuda9.0\_x86\_64/include/nccl.h /usr/local/cuda/include`
+ - `$ sudo cp nccl\_2.3.4-1+cuda9.0\_x86\_64/lib/libnccl.so\* /usr/local/cuda/lib64`
+ - `$ sudo chmod a+r /usr/local/cuda/include/nccl.h`
+ - `$ sudo chmod a+r /usr/local/cuda/lib64/libnccl.so\*`
 
 ### **Software package for PSF Generation**
 
@@ -201,8 +201,8 @@ ExM deconvolution package provides two ways of running deconvolution: a command 
 
 1. Download a tar ball of ExM deconvolution at [http://exm.studio](http://exm.studio)
 1. Untar the tar ball at the parent directory of ExM-Studio,
- - `$ cd AppDir
- - $ tar xzf ExM-deconvolution-ver0.1.tar.gz`
+ - `$ cd AppDir`
+ - `$ tar xzf ExM-deconvolution-ver0.1.tar.gz`
 3. Put these environment variables into .bash\_profile
  - `export PATH=&quot;AppDir/ExM-Studio/deconv/bin&quot;:$PATH`
  - `export LD\_LIBRARY\_PATH=&quot;AppDir/ExM-Studio/deconv/lib&quot;:$LD\_LIBRARY\_PATH`
@@ -217,4 +217,4 @@ For ExM deconvolution, MATLAB is able to be used for console to run. MATLAB can 
 
 Binary of TeraStitcher can be found at [https://github.com/abria/TeraStitcher/wiki/Binary-packages](https://github.com/abria/TeraStitcher/wiki/Binary-packages). There are options for Windows/Mac/Linux as well as two options between a command line only version with some GPU acceleration or a slightly older version that has a GUI. The CUDA accelerated command line version is recommended ([https://github.com/abria/TeraStitcher/wiki/Binary-packages#terastitcher-portable-command-line-version](https://github.com/abria/TeraStitcher/wiki/Binary-packages#terastitcher-portable-command-line-version)). Extract that package to ExM-Studio/stitching. For example, if ExM-Studio is in the home directory run:
 
-`$ unzip -j -d ~/ExM-Studio/stitching/TeraStitcher-portable-1.11.6-Linux.zip`
+ - `$ unzip -j -d ~/ExM-Studio/stitching/TeraStitcher-portable-1.11.6-Linux.zip`
