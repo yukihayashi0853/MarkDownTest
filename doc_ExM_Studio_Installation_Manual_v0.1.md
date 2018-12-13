@@ -24,14 +24,6 @@ Version: 0.1
 | FoV | Field of View |
 | EPFL | ÉCOLE POLYTECHNIQUE FÉDÉRALE DE LAUSANNE |
 
-
-
-
-
-
-
-
-
 # **Introduction**
 
 This ExM Studio Installation Manual provides instructions on how to install and configure ExM Studio software on a server. Information about ExM Studio, including ExM Studio User&#39;s Manual, is on-line at
@@ -39,8 +31,6 @@ This ExM Studio Installation Manual provides instructions on how to install and 
 [http://exm.studio](http://exm.studio)
 
 The first part of this manual is system requirements of hardware and software for ExM Studio. The second part describes general instructions on how to download ExM Studio packages, and external libraries and applications it needs, and install them.
-
-
 
 # **System requirements**
 
@@ -58,14 +48,6 @@ This table shows our recommended requirements of hardware for ExM Studio. We pro
 |         | 2x SATA 4TB HDD (For Data) |
 
 The memory size depends on image size you process with ExM Studio. The stitching application takes an especially huge memory size. For example, supposing that one 2D tiff image is 10MB and the grid dimension of FoVs is 9x9 on xy plane and 100z−planes are processed, the expected maximum of memory usage is around 100GB at most.
-
-
-
-
-
-
-
-
 
 ## **Software**
 
@@ -174,21 +156,19 @@ The NVIDIA cuDNN is a GPU-accelerated library for processing deep neural network
 We verified cuDNN at least 7.3.
 
 1. Download a tar file at cuDNN webpage in NVIDIA
-
-1.
-  1. Open cuDNN home page: [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn) on web browser
-  2. Click &#39;Download cnDNN&#39; button
-  3. Complete the survey and click &#39;Submit&#39; button
-  4. Check a button for accepting the &#39;Terms and Conditions&#39;
-  5. Click &#39;Archived cuDNN Releases&#39; link
-  6. Click &#39;Download cuDNN v7.3.0 [Sept 19, 2018], for CUDA 9.0&#39;
-  7. Click &#39;cuDNN v7.3.0 Library for Linux&#39; and get &#39;cudnn-9.0-linux-x64-v7.3.0.29.tgz&#39;
-2. Install the downloaded tar file
-$ tar xvzf cudnn-9.0-linux-x64-v7.3.0.29.tgz
+    1. Open cuDNN home page: [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn) on web browser
+    1. Click &#39;Download cnDNN&#39; button
+    1. Complete the survey and click &#39;Submit&#39; button
+    1. Check a button for accepting the &#39;Terms and Conditions&#39;
+    1. Click &#39;Archived cuDNN Releases&#39; link
+    1. Click &#39;Download cuDNN v7.3.0 [Sept 19, 2018], for CUDA 9.0&#39;
+    1. Click &#39;cuDNN v7.3.0 Library for Linux&#39; and get &#39;cudnn-9.0-linux-x64-v7.3.0.29.tgz&#39;
+1. Install the downloaded tar file
+`$ tar xvzf cudnn-9.0-linux-x64-v7.3.0.29.tgz
 $ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 $ sudo cp cuda/lib64/libcudnn\* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn.h
-$ sudo chmod a+r /usr/local/cuda/lib64/libcudnn\*
+$ sudo chmod a+r /usr/local/cuda/lib64/libcudnn\*`
 
 ### **NVIDIA NCCL**
 
