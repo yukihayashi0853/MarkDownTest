@@ -1,6 +1,5 @@
 
 # ExM Studio Installation Manual
-
 # **Version Information**
 
 | Date | Version | Author(s) |
@@ -91,11 +90,11 @@ This chapter describes each module functions, usage, and example in ExM Studio, 
 ExM-Studio/  
 └─ deconv/                          # For ExM deconvolution package
 |   └─ bin/  
-|   |   ├─exmDeconv                 # Command line
-|   |   ├─exmDeconv.mexa64          # Mex file for MATLAB
-|   |   \─PSFGenerator.jar          # Jar file for PSF generation (not included)
+|   |   |-exmDeconv                 # Command line
+|   |   |-exmDeconv.mexa64          # Mex file for MATLAB
+|   |   \-PSFGenerator.jar          # Jar file for PSF generation (not included)
 |   ├─lib/
-|   |   \─libexm_deconvolution.so   # Library of deconv engine |
+|   |   \-libexm_deconvolution.so   # Library of deconv engine |
 |   \-config/
 |       \-config.txt                # Configuration file for PSF Generator
 \-stitching/                        # Folder to contain stitching package
@@ -121,11 +120,11 @@ NVIDIA driver is a kernel module for controlling GPUs. If you don't have NVIDIA 
     1. Click 'DOWNLOAD' button, and open a new page for download
     1. Click 'DOWNLOAD' button
 1. Stop X server if you use GUI on Linux 
- `$ sudo init 3`
+ - `$ sudo init 3`
 1. Run the installation script
- `$ sudo sh NVIDIA-Linux-x86\_xxx.xx.run  (xxx.xx is driver version)`
+ - `$ sudo sh NVIDIA-Linux-x86\_xxx.xx.run  (xxx.xx is driver version)`
 1. Reboot a server 
- `$ sudo reboot`
+ - `$ sudo reboot`
 
 ### **CUDA Toolkit**
 
