@@ -1,4 +1,4 @@
-# ExM Studio User&#39;s Manual
+# ExM Studio User's Manual
 
 # **Version Information**
 
@@ -17,18 +17,15 @@
 | EPFL | ÉCOLE POLYTECHNIQUE FÉDÉRALE DE LAUSANNE |
 
 # **Introduction**
-<br> </br>
-This User&#39;s Manual is designed to provide documentation for people who will use ExM Studio. This manual describes ExM Studio functions and their usage. Installation Instructions are covered in another manual of &#39;ExM Studio Installation Manual&#39;.
-<br> </br>
+This User's Manual is designed to provide documentation for people who will use ExM Studio. This manual describes ExM Studio functions and their usage. Installation Instructions are covered in another manual of 'ExM Studio Installation Manual'.
 # **What is ExM Studio?**
-<br> </br>
 Expansion Microscopy (ExM) Studio is a software package for Expansion Microscopy. Expansion Microscopy is a method for improving the resolution of light microscopy by physically expanding biological samples. Images of enlarged samples are captured many times to cover the entire specimen with a small FoV of the microscope. ExM Studio processes a lot of huge image data fast and effectively.
 
 ExM Studio has two modules: deconvolution and stitching. Firstly, deconvolution is a mathematical operation for removing the out-of-focus information which is introduced by optical microscopy. With deconvolution, the microscopic image gets clearer. ExM Studio provides ExM deconvolution which is our GPU-accelerated deconvolution and optimized for NVIDIA GPU. Secondly, stitching is the process of combining multiple tiled images. Stitching takes a long time and requires lots of memory because it processes many images at the same time. For stitching a large number of images, currently, we introduce TeraStitcher, which is one of the promising software which has partial GPU acceleration.
 
 ExM Studio uses the following directory structure.
 
-This chapter describes each module functions, usage, and example in ExM Studio, supposing that ExM Studio package is located at application directory, &#39;AppDir&#39;.
+This chapter describes each module functions, usage, and example in ExM Studio, supposing that ExM Studio package is located at application directory, 'AppDir'.
 
 ```
 ExM-Studio/  
@@ -44,7 +41,6 @@ ExM-Studio/
 \-stitching/                        # Folder to contain stitching package
 ```
 
-
 ## **Deconvolution**
 
 Deconvolution process consists of two procedures: PSF generation and image deconvolution with the generated PSF. The following sections explain applications, functions, usage, and examples of PSF generation and ExM deconvolution.
@@ -55,7 +51,7 @@ Currently, we have not provided a PSF generation function yet. We introduce an o
 
 PSF Generator is a software package provided as a Java library. Here we explain how to run the PSF Generator jar file on MATLAB. PSF Generator has two options to generate PSF volume data: use GUI and use a configuration file.
 
-In this version, ExM deconvolution only supports 3D uint16 data as input. Please note that &#39;16-bits&#39; is selected from a pull-down menu on the bottom of GUI dialog, or written as &#39;Type=16-bits&#39; in a configuration file.
+In this version, ExM deconvolution only supports 3D uint16 data as input. Please note that '16-bits' is selected from a pull-down menu on the bottom of GUI dialog, or written as 'Type=16-bits' in a configuration file.
 
 #### Usage:
 
@@ -78,19 +74,19 @@ In this version, ExM deconvolution only supports 3D uint16 data as input. Please
 Using GUI on MATLAB:
 ```
 $ matlab
->> javaaddpath(&#39;AppDir/ExM-Studio/deconv/bin/PSFGenerator.jar&#39;);
+>> javaaddpath('AppDir/ExM-Studio/deconv/bin/PSFGenerator.jar');
 >> PSFGenerator.gui;
 >> psf = PSFGenerator.get; 
 ```
 
 
-\* Please note that output format of PSF volume should be &#39;16-bits&#39; currently.
+\* Please note that output format of PSF volume should be '16-bits' currently.
 
 Saving PSF data in TIFF format:
 
 ```
 (Following the above)
->> saveastiff(psf,&#39;psf.tif&#39;); 
+>> saveastiff(psf,'psf.tif'); 
 ```
 
 Note: `saveastiff` function is provided at [https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function](https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function)
@@ -99,8 +95,8 @@ Using a configuration file on MATLAB:
 
 ```
 $ matlab
->> javaaddpath(&#39;AppDir/ExM-Studio/deconv/bin/PSFGenerator.jar&#39;);
->> PSFGenerator.compute(&#39;config.txt&#39;); 
+>> javaaddpath('AppDir/ExM-Studio/deconv/bin/PSFGenerator.jar');
+>> PSFGenerator.compute('config.txt'); 
 ```
 
 ### **ExM Deconvolution**
@@ -140,9 +136,9 @@ Using a mex file on MATLAB:
 
 ```
 $ matlab
->> addpath(&#39;AppDir/ExM-Studio/deconv/bin&#39;);
->> img = loadtiff(&#39;sample.tif&#39;);
->> psf = loadtiff(&#39;psf.tif&#39;);
+>> addpath('AppDir/ExM-Studio/deconv/bin');
+>> img = loadtiff('sample.tif');
+>> psf = loadtiff('psf.tif');
 >>
 >> deconv\_img = exmDeconv(img, psf, 10);
 ```
@@ -152,13 +148,13 @@ Note: `loadtiff` function is provided at [https://www.mathworks.com/matlabcentra
 
 The stitching module takes as input a volume consisting of a set of tiles each of which has a position and a set of images corresponding to depth. The stitching process combines these separate tiles into one large one where each image spans the entire acquisition target.
 
-The guide is intended to act as a supplement to TeraStitcher&#39;s GitHub wiki located at [https://github.com/abria/TeraStitcher/wiki](https://github.com/abria/TeraStitcher/wiki). This guide contains an overview of the minimum required steps to perform the stitching but does not exhaustively cover all possible input parameters and options. For full possible run options please refer to TeraStitcher&#39;s wiki.
+The guide is intended to act as a supplement to TeraStitcher's GitHub wiki located at [https://github.com/abria/TeraStitcher/wiki](https://github.com/abria/TeraStitcher/wiki). This guide contains an overview of the minimum required steps to perform the stitching but does not exhaustively cover all possible input parameters and options. For full possible run options please refer to TeraStitcher's wiki.
 
 ### **TeraStitcher**
 
 #### Requirements:
 
-To import data automatically the input data must be arranged in a two level directory hierarchy where the directory names have information about the mechanical displacement of the microscope between image captures. The root directory of the raw data should contain folders with 6 digit names. These represent the displacement in tenths of microns along the first dimension (which dimension can be specified in the input step). These directories each contain another set of directories representing displacement along the second dimension. They have names of 6 digits (same digits as parent directory) followed by an underscore followed by another 6 digits representing displacement in microns along the second dimension. Each of these folders then contain a set of TIFF files again with 6 digit names representing the depth displacement. For more information please see TeraStitcher&#39;s description at [https://github.com/abria/TeraStitcher/wiki/Supported-volume-formats#two-level-hierarchy-of-folders](https://github.com/abria/TeraStitcher/wiki/Supported-volume-formats#two-level-hierarchy-of-folders). It is possible to manually import data by producing a XML file describing the data however this is not recommended for most users.  Additionally, the user running TeraStitcher needs to have write permissions to this directory as some metadata is saved in the root directory of the input.
+To import data automatically the input data must be arranged in a two level directory hierarchy where the directory names have information about the mechanical displacement of the microscope between image captures. The root directory of the raw data should contain folders with 6 digit names. These represent the displacement in tenths of microns along the first dimension (which dimension can be specified in the input step). These directories each contain another set of directories representing displacement along the second dimension. They have names of 6 digits (same digits as parent directory) followed by an underscore followed by another 6 digits representing displacement in microns along the second dimension. Each of these folders then contain a set of TIFF files again with 6 digit names representing the depth displacement. For more information please see TeraStitcher's description at [https://github.com/abria/TeraStitcher/wiki/Supported-volume-formats#two-level-hierarchy-of-folders](https://github.com/abria/TeraStitcher/wiki/Supported-volume-formats#two-level-hierarchy-of-folders). It is possible to manually import data by producing a XML file describing the data however this is not recommended for most users.  Additionally, the user running TeraStitcher needs to have write permissions to this directory as some metadata is saved in the root directory of the input.
 
 | dataRoot/ |
 | --- |
@@ -216,10 +212,8 @@ This step also produces 2 files in the root of the input data folder:
 ##### Step 2: Displacement Computation
 
 This step computes an initial displacement between tiles in the input. The step is a computationally heavy step as it requires reading every file in the input. The input parameters are:
-
 - Operation to run
   - `--displcompute`
-
 - Subvolume dimension
   - `--subvoldim` the number of images included in the displacement algorithm at a time. Effects runtime and accuracy of stitching. Value should be a large enough depth to cover of features in input; typical values are 100-200.
 
@@ -228,7 +222,6 @@ Additionally, this step, in the command line only version, has some GPU accelera
 ##### Step 3: Project Displacement
 
 The initial computation of displacement produces a set of possible displacements. This refines them down to 1 displacement per set of tiles.
-
 - Operation to run
   - `--displproj`
 
@@ -252,7 +245,6 @@ Final displacement optimization; makes displacements globally consistent meaning
 ##### Step 6: Merge tiles
 
 Uses the optimized displacements to generate a stitched volume. The stitched volume is contained in a folder named RES(XxYxZ) where X Y and Z are the dimensions of the stitched volume. The folder hierarchy similar to what is expected as input. However, the output only has a single row and column directory. The innermost directory contains a set of large TIFF files which are slices across the entire volume iterating over the depth. This step also loads all input images making it a computationally expensive step.
-
 - Operation to run
   - `--merge`
 - Volume output directory
