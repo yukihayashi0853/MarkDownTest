@@ -109,7 +109,6 @@ This section describes how to install NVIDIA driver, CUDA toolkit library, softw
 ### **NVIDIA driver**
 
 NVIDIA driver is a kernel module for controlling GPUs. If you don&#39;t have NVIDIA driver, please install it by following these instructions.
-
 1. Download an installation script for the latest driver at NVIDIA webpage
     1. Open NVIDIA DOWNLOAD DRIVERS page: [https://www.nvidia.com/Download/index.aspx](https://www.nvidia.com/Download/index.aspx) on web browser
     1. Select your own GPU type, for example, RTX-2080:
@@ -202,11 +201,11 @@ ExM deconvolution package provides two ways of running deconvolution: a command 
 
 1. Download a tar ball of ExM deconvolution at [http://exm.studio](http://exm.studio)
 1. Untar the tar ball at the parent directory of ExM-Studio,
-`$ cd AppDir
-$ tar xzf ExM-deconvolution-ver0.1.tar.gz`
+ - `$ cd AppDir
+ - $ tar xzf ExM-deconvolution-ver0.1.tar.gz`
 3. Put these environment variables into .bash\_profile
-`export PATH=&quot;AppDir/ExM-Studio/deconv/bin&quot;:$PATH
-export LD\_LIBRARY\_PATH=&quot;AppDir/ExM-Studio/deconv/lib&quot;:$LD\_LIBRARY\_PATH`
+ - `export PATH=&quot;AppDir/ExM-Studio/deconv/bin&quot;:$PATH`
+ - `export LD\_LIBRARY\_PATH=&quot;AppDir/ExM-Studio/deconv/lib&quot;:$LD\_LIBRARY\_PATH`
 
 ### **MATLAB**
 
