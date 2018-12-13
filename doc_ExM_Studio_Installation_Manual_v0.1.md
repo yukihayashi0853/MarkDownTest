@@ -156,14 +156,12 @@ $ sudo reboot
 CUDA Toolkit is provided by NVIDIA. ExM Studio runs with CUDA Toolkit 9.1 and 9.2. Here, CUDA Toolkit 9.1 installation is explained, as an example. If you have already installed other version of CUDA Toolkit, please note that the installed path is /usr/local/cuda or /usr/local/cuda-9.1.
 
 1. Download an installation script at CUDA Toolkit webpage in NVIDIA as in the table of chapter &#39;System requirements&#39;
-
-1.
-  1. Open CUDA Toolkit archived web page: [https://developer.nvidia.com/cuda-91-download-archive](https://developer.nvidia.com/cuda-91-download-archive) on web browser
-  2. Click &#39;Linux&#39;, &#39;x86\_64&#39;, &#39;CentOS&#39;, &#39;7&#39;, and &#39;runfile (local)&#39; buttons
-  3. Click &#39;Download&#39; button at Base Installer
-2. Run an install script with sudo
+    1. Open CUDA Toolkit archived web page: [https://developer.nvidia.com/cuda-91-download-archive](https://developer.nvidia.com/cuda-91-download-archive) on web browser
+    1. Click &#39;Linux&#39;, &#39;x86\_64&#39;, &#39;CentOS&#39;, &#39;7&#39;, and &#39;runfile (local)&#39; buttons
+    1. Click &#39;Download&#39; button at Base Installer
+1. Run an install script with sudo
 $ sudo sh cuda\_9.1.x\_xxx.xx\_linux.run  (xxx.xx is CUDA 9.1 revision)
-3. Configure shell environment variables in ~/.bash\_profile:
+1. Configure shell environment variables in ~/.bash\_profile:
 export CUDA\_ROOT\_DIR=/usr/local/cuda
 export PATH=$PATH:${CUDA\_ROOT\_DIR}/bin
 export LD\_LIBRARY\_PATH=${LD\_LIBRARY\_PATH}:${CUDA\_ROOD\_DIR}/lib64
