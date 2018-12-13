@@ -20,20 +20,6 @@ Version: 0.1
 | FoV | Field of View |
 | EPFL | ÉCOLE POLYTECHNIQUE FÉDÉRALE DE LAUSANNE |
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # **Introduction**
 <br> </br>
 This User&#39;s Manual is designed to provide documentation for people who will use ExM Studio. This manual describes ExM Studio functions and their usage. Installation Instructions are covered in another manual of &#39;ExM Studio Installation Manual&#39;.
@@ -41,26 +27,26 @@ This User&#39;s Manual is designed to provide documentation for people who will 
 # **What is ExM Studio?**
 <br> </br>
 Expansion Microscopy (ExM) Studio is a software package for Expansion Microscopy. Expansion Microscopy is a method for improving the resolution of light microscopy by physically expanding biological samples. Images of enlarged samples are captured many times to cover the entire specimen with a small FoV of the microscope. ExM Studio processes a lot of huge image data fast and effectively.
-<br> </br>
+
 ExM Studio has two modules: deconvolution and stitching. Firstly, deconvolution is a mathematical operation for removing the out-of-focus information which is introduced by optical microscopy. With deconvolution, the microscopic image gets clearer. ExM Studio provides ExM deconvolution which is our GPU-accelerated deconvolution and optimized for NVIDIA GPU. Secondly, stitching is the process of combining multiple tiled images. Stitching takes a long time and requires lots of memory because it processes many images at the same time. For stitching a large number of images, currently, we introduce TeraStitcher, which is one of the promising software which has partial GPU acceleration.
 
 ExM Studio uses the following directory structure.
 
 This chapter describes each module functions, usage, and example in ExM Studio, supposing that ExM Studio package is located at application directory, &#39;AppDir&#39;.
 
-| ExM-Studio/ |   |
-| --- | --- |
-|   |- deconv/ | For ExM deconvolution package |
-|   |   |- bin/ |   |
-|   |   |   |- exmDeconv | Command line |
-|   |   |   |- exmDeconv.mexa64 | Mex file for MATLAB |
-|   |   |   \- PSFGenerator.jar | Jar file for PSF generation (not included) |
-|   |   |- lib/ |   |
-|   |   |   \- libexm\_deconvolution.so | Library of deconv engine |
-|   |   \- config/ |   |
-|   |       \- config.txt | Configuration file for PSF Generator |
-|   \- stitching/ | Folder to contain stitching package |
-
+```
+ExM-Studio/  
+└─ deconv/                          # For ExM deconvolution package
+|   └─ bin/  
+|   |   ├─exmDeconv                 # Command line
+|   |   ├─exmDeconv.mexa64          # Mex file for MATLAB
+|   |   \─PSFGenerator.jar          # Jar file for PSF generation (not included)
+|   ├─lib/
+|   |   \─libexm_deconvolution.so   # Library of deconv engine |
+|   \-config/
+|       \-config.txt                # Configuration file for PSF Generator
+\-stitching/                        # Folder to contain stitching package
+```
 
 
 ## **Deconvolution**
