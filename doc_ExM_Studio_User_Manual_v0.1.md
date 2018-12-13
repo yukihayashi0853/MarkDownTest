@@ -1,3 +1,6 @@
+![fixstarslogo](https://user-images.githubusercontent.com/45530534/49971112-303a6f00-fee2-11e8-9d14-7c45bf53d16e.png)
+
+
 # ExM Studio User's Manual
 
 # **Version Information**
@@ -77,6 +80,7 @@ $ matlab
 >> psf = PSFGenerator.get; 
 ```
 
+![psf generator](https://user-images.githubusercontent.com/45530534/49970936-bf935280-fee1-11e8-9560-5346a07146dd.png)
 
 \* Please note that output format of PSF volume should be '16-bits' currently.
 
