@@ -94,7 +94,7 @@ ExM-Studio/
 |   |   |-exmDeconv.mexa64          # Mex file for MATLAB
 |   |   \-PSFGenerator.jar          # Jar file for PSF generation (not included)
 |   ├─lib/
-|   |   \-libexm_deconvolution.so   # Library of deconv engine |
+|   |   \-libexm_deconvolution.so   # Library of deconv engine 
 |   \-config/
 |       \-config.txt                # Configuration file for PSF Generator
 \-stitching/                        # Folder to contain stitching package
@@ -135,7 +135,7 @@ CUDA Toolkit is provided by NVIDIA. ExM Studio runs with CUDA Toolkit 9.1 and 9.
     1. Click 'Linux', 'x86\_64', 'CentOS', '7', and 'runfile (local)' buttons
     1. Click 'Download' button at Base Installer
 1. Run an install script with sudo
- - `$ sudo sh cuda\_9.1.x\_xxx.xx\_linux.run  (xxx.xx is CUDA 9.1 revision)`
+ - `$ sudo sh cuda\_9.1.x\_xxx.xx\_linux.run`  (xxx.xx is CUDA 9.1 revision)
 1. Configure shell environment variables in ~/.bash\_profile:
  - `export CUDA\_ROOT\_DIR=/usr/local/cuda`
  - `export PATH=$PATH:${CUDA\_ROOT\_DIR}/bin`
