@@ -93,18 +93,20 @@ ExM Studio uses the following directory structure.
 
 This chapter describes each module functions, usage, and example in ExM Studio, supposing that ExM Studio package is located at application directory, &#39;AppDir&#39;.
 
-| ExM-Studio/ |   |
-| --- | --- |
-|   |- deconv/ | For ExM deconvolution package |
-|   |   |- bin/ |   |
-|   |   |   |- exmDeconv | Command line |
-|   |   |   |- exmDeconv.mexa64 | Mex file for MATLAB |
-|   |   |   \- PSFGenerator.jar | Jar file for PSF generation (not included) |
-|   |   |- lib/ |   |
-|   |   |   \- libexm\_deconvolution.so | Library of deconv engine |
-|   |   \- config/ |   |
-|   |       \- config.txt | Configuration file for PSF Generator |
-|   \- stitching/ | Folder to contain stitching package |
+```
+ExM-Studio/  
+└─ deconv/                          # For ExM deconvolution package
+|   └─ bin/  
+|   |   ├─exmDeconv                # Command line
+|   |   ├─exmDeconv.mexa64         # Mex file for MATLAB
+|   |   \─PSFGenerator.jar         # Jar file for PSF generation (not included)
+|   ├─lib/
+|   |   \─libexm_deconvolution.so  # Library of deconv engine |
+|   \-config/
+|       \-config.txt               # Configuration file for PSF Generator
+\-stitching/                       # Folder to contain stitching package
+```
+    
 
 ## **Deconvolution**
 
