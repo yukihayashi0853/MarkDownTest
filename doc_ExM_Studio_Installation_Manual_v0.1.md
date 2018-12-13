@@ -144,16 +144,11 @@ NVIDIA driver is a kernel module for controlling GPUs. If you don&#39;t have NVI
     1. Click &#39;DOWNLOAD&#39; button, and open a new page for download
     1. Click &#39;DOWNLOAD&#39; button
 1. Stop X server if you use GUI on Linux
-
 `$ sudo init 3`
 1. Run the installation script
-
 `$ sudo sh NVIDIA-Linux-x86\_xxx.xx.run  (xxx.xx is driver version)`
-
 1. Reboot a server
-
 `$ sudo reboot`
-
 
 ### **CUDA Toolkit**
 
