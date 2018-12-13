@@ -1,12 +1,6 @@
 
 # ExM Studio Installation Manual
 
-November 12, 2018
-
-Version: 0.1
-
-
-
 # **Version Information**
 
 | Date | Version | Author(s) |
