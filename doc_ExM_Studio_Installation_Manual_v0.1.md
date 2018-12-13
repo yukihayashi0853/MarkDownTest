@@ -20,7 +20,7 @@
 
 # **Introduction**
 
-This ExM Studio Installation Manual provides instructions on how to install and configure ExM Studio software on a server. Information about ExM Studio, including ExM Studio User&#39;s Manual, is on-line at
+This ExM Studio Installation Manual provides instructions on how to install and configure ExM Studio software on a server. Information about ExM Studio, including ExM Studio User's Manual, is on-line at
 
 [http://exm.studio](http://exm.studio)
 
@@ -85,7 +85,7 @@ Typically, installation of ExM Studio is simple. The first section describes how
 
 ExM Studio uses the following directory structure.
 
-This chapter describes each module functions, usage, and example in ExM Studio, supposing that ExM Studio package is located at application directory, &#39;AppDir&#39;.
+This chapter describes each module functions, usage, and example in ExM Studio, supposing that ExM Studio package is located at application directory, 'AppDir'.
 
 ```
 ExM-Studio/  
@@ -108,18 +108,18 @@ This section describes how to install NVIDIA driver, CUDA toolkit library, softw
 
 ### **NVIDIA driver**
 
-NVIDIA driver is a kernel module for controlling GPUs. If you don&#39;t have NVIDIA driver, please install it by following these instructions.
+NVIDIA driver is a kernel module for controlling GPUs. If you don't have NVIDIA driver, please install it by following these instructions.
 1. Download an installation script for the latest driver at NVIDIA webpage
     1. Open NVIDIA DOWNLOAD DRIVERS page: [https://www.nvidia.com/Download/index.aspx](https://www.nvidia.com/Download/index.aspx) on web browser
     1. Select your own GPU type, for example, RTX-2080:
-        1. Select &#39;GeForce&#39; in a pull-down menu of &#39;Product Type&#39;
-        1. Select &#39;GeForce RTX 20 Series&#39; in a pull-down menu of &#39;Product Series&#39;
-        1. Select &#39;GeForce RTX 2080&#39; in a pull-down menu of &#39;Product&#39;
-        1. Select &#39;Linux 64-bit&#39; in a pull-down menu of &#39;Operating System&#39;
-        1. Select &#39;English (US)&#39; in a pull-down menu of &#39;Language&#39;
-        1. Click &#39;SEARCH&#39; button
-    1. Click &#39;DOWNLOAD&#39; button, and open a new page for download
-    1. Click &#39;DOWNLOAD&#39; button
+        1. Select 'GeForce' in a pull-down menu of 'Product Type'
+        1. Select 'GeForce RTX 20 Series' in a pull-down menu of 'Product Series'
+        1. Select 'GeForce RTX 2080' in a pull-down menu of 'Product'
+        1. Select 'Linux 64-bit' in a pull-down menu of 'Operating System'
+        1. Select 'English (US)' in a pull-down menu of 'Language'
+        1. Click 'SEARCH' button
+    1. Click 'DOWNLOAD' button, and open a new page for download
+    1. Click 'DOWNLOAD' button
 1. Stop X server if you use GUI on Linux 
  `$ sudo init 3`
 1. Run the installation script
@@ -131,16 +131,16 @@ NVIDIA driver is a kernel module for controlling GPUs. If you don&#39;t have NVI
 
 CUDA Toolkit is provided by NVIDIA. ExM Studio runs with CUDA Toolkit 9.1 and 9.2. Here, CUDA Toolkit 9.1 installation is explained, as an example. If you have already installed other version of CUDA Toolkit, please note that the installed path is /usr/local/cuda or /usr/local/cuda-9.1.
 
-1. Download an installation script at CUDA Toolkit webpage in NVIDIA as in the table of chapter &#39;System requirements&#39;
+1. Download an installation script at CUDA Toolkit webpage in NVIDIA as in the table of chapter 'System requirements'
     1. Open CUDA Toolkit archived web page: [https://developer.nvidia.com/cuda-91-download-archive](https://developer.nvidia.com/cuda-91-download-archive) on web browser
-    1. Click &#39;Linux&#39;, &#39;x86\_64&#39;, &#39;CentOS&#39;, &#39;7&#39;, and &#39;runfile (local)&#39; buttons
-    1. Click &#39;Download&#39; button at Base Installer
+    1. Click 'Linux', 'x86\_64', 'CentOS', '7', and 'runfile (local)' buttons
+    1. Click 'Download' button at Base Installer
 1. Run an install script with sudo
-`$ sudo sh cuda\_9.1.x\_xxx.xx\_linux.run  (xxx.xx is CUDA 9.1 revision)`
+ - `$ sudo sh cuda\_9.1.x\_xxx.xx\_linux.run  (xxx.xx is CUDA 9.1 revision)`
 1. Configure shell environment variables in ~/.bash\_profile:
-`export CUDA\_ROOT\_DIR=/usr/local/cuda
-export PATH=$PATH:${CUDA\_ROOT\_DIR}/bin
-export LD\_LIBRARY\_PATH=${LD\_LIBRARY\_PATH}:${CUDA\_ROOD\_DIR}/lib64`
+ - `export CUDA\_ROOT\_DIR=/usr/local/cuda`
+ - `export PATH=$PATH:${CUDA\_ROOT\_DIR}/bin
+ - `export LD\_LIBRARY\_PATH=${LD\_LIBRARY\_PATH}:${CUDA\_ROOD\_DIR}/lib64`
 
 More information on how to install CUDA Toolkit is here: [https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
 
@@ -152,12 +152,12 @@ We verified cuDNN at least 7.3.
 
 1. Download a tar file at cuDNN webpage in NVIDIA
     1. Open cuDNN home page: [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn) on web browser
-    1. Click &#39;Download cnDNN&#39; button
-    1. Complete the survey and click &#39;Submit&#39; button
-    1. Check a button for accepting the &#39;Terms and Conditions&#39;
-    1. Click &#39;Archived cuDNN Releases&#39; link
-    1. Click &#39;Download cuDNN v7.3.0 [Sept 19, 2018], for CUDA 9.0&#39;
-    1. Click &#39;cuDNN v7.3.0 Library for Linux&#39; and get &#39;cudnn-9.0-linux-x64-v7.3.0.29.tgz&#39;
+    1. Click 'Download cnDNN' button
+    1. Complete the survey and click 'Submit' button
+    1. Check a button for accepting the 'Terms and Conditions'
+    1. Click 'Archived cuDNN Releases' link
+    1. Click 'Download cuDNN v7.3.0 [Sept 19, 2018], for CUDA 9.0'
+    1. Click 'cuDNN v7.3.0 Library for Linux' and get 'cudnn-9.0-linux-x64-v7.3.0.29.tgz'
 1. Install the downloaded tar file
 - `$ tar xvzf cudnn-9.0-linux-x64-v7.3.0.29.tgz`
 - `$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include`
@@ -173,12 +173,12 @@ We verified NCCL at least 2.3.4.
 
 1. Download a tar file at NCCL webpage in NVIDIA
     1. Open cuDNN home page: [https://developer.nvidia.com/nccl](https://developer.nvidia.com/nccl) on web browser
-    1. Click &#39;Download NCCL&#39; button
-    1. Complete the survey and click &#39;Submit&#39; button
-    1. Click &#39;NCCL legacy Downloads&#39; for selecting the previous version
-    1. Check a button for accepting the &#39;Terms and Conditions&#39;
-    1. Click &#39;Download NCCL v2.3.4, for CUDA 9.0, Sept 19, 2018&#39;
-    1. Click &#39;NCCL 2.3.4 O/S agnostic and CUDA 9.0&#39; and get &#39;nccl\_2.3.4-1+cuda9.0\_x86\_64.txz&#39;
+    1. Click 'Download NCCL' button
+    1. Complete the survey and click 'Submit' button
+    1. Click 'NCCL legacy Downloads' for selecting the previous version
+    1. Check a button for accepting the 'Terms and Conditions'
+    1. Click 'Download NCCL v2.3.4, for CUDA 9.0, Sept 19, 2018'
+    1. Click 'NCCL 2.3.4 O/S agnostic and CUDA 9.0' and get 'nccl\_2.3.4-1+cuda9.0\_x86\_64.txz'
 1. Install the downloaded tar file
  - `$ tar xvJf nccl\_2.3.4-1+cuda9.0\_x86\_64.txz`
  - `$ sudo cp nccl\_2.3.4-1+cuda9.0\_x86\_64/include/nccl.h /usr/local/cuda/include`
