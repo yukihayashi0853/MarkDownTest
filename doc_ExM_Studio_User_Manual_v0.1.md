@@ -1,9 +1,5 @@
 # ExM Studio User&#39;s Manual
 
-November 12, 2018
-
-Version: 0.1
-
 # **Version Information**
 
 | Date | Version | Author(s) |
