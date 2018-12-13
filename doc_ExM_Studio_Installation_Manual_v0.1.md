@@ -1,3 +1,5 @@
+![fixstarslogo](https://user-images.githubusercontent.com/45530534/49971112-303a6f00-fee2-11e8-9d14-7c45bf53d16e.png)
+
 
 # ExM Studio Installation Manual
 # **Version Information**
