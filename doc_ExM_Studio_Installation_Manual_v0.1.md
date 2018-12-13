@@ -41,7 +41,7 @@ This chapter describes system requirements for ExM Studio.
 This table shows our recommended requirements of hardware for ExM Studio. We provide a server which satisfies the hardware requirements. Currently we support Pascal architecture of NVIDIA GPUs or newer.
 
 | Processor | 1x Intel Xeon Gold 6128, 3.4GHz, 6Core |
-| :---: | :---: |
+| :---: | :--- |
 | GPU | 1x NVIDIA RTX 2080 |
 | RAM | 8x 16GB Memory |
 | Storage | 1x M.2 512GB SSD (For OS) |
