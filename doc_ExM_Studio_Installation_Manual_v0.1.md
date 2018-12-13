@@ -139,7 +139,7 @@ CUDA Toolkit is provided by NVIDIA. ExM Studio runs with CUDA Toolkit 9.1 and 9.
  - `$ sudo sh cuda\_9.1.x\_xxx.xx\_linux.run  (xxx.xx is CUDA 9.1 revision)`
 1. Configure shell environment variables in ~/.bash\_profile:
  - `export CUDA\_ROOT\_DIR=/usr/local/cuda`
- - `export PATH=$PATH:${CUDA\_ROOT\_DIR}/bin
+ - `export PATH=$PATH:${CUDA\_ROOT\_DIR}/bin`
  - `export LD\_LIBRARY\_PATH=${LD\_LIBRARY\_PATH}:${CUDA\_ROOD\_DIR}/lib64`
 
 More information on how to install CUDA Toolkit is here: [https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
