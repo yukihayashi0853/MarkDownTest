@@ -79,8 +79,6 @@ $ matlab
 >> psf = PSFGenerator.get; 
 ```
 
-# Need to figure out how to post pictures here
-
 
 \* Please note that output format of PSF volume should be '16-bits' currently.
 
@@ -91,7 +89,7 @@ Saving PSF data in TIFF format:
 >> saveastiff(psf,'psf.tif'); 
 ```
 
-Note: `saveastiff` function is provided at [https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function](https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function)
+Note: 'saveastiff' function is provided at [https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function](https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function)
 
 Using a configuration file on MATLAB:
 
@@ -144,7 +142,7 @@ $ matlab
 >>
 >> deconv\_img = exmDeconv(img, psf, 10);
 ```
-Note: `loadtiff` function is provided at [https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function](https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function)
+Note: 'loadtiff' function is provided at [https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function](https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack?focused=7519470&amp;tab=function)
 
 ## **Stitching**
 
