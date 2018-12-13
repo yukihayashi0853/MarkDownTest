@@ -74,10 +74,6 @@ Deconvolution process consists of two procedures: Point Spread Function (PSF) ge
 | MATLAB | 2018a | [https://www.mathworks.com/products/matlab.html](https://www.mathworks.com/products/matlab.html) |
 | PSF Generator | 18.12.2017 | [http://bigwww.epfl.ch/algorithms/psfgenerator/](http://bigwww.epfl.ch/algorithms/psfgenerator/) |
 
-
-
-
-
 # **Installation**
 
 Typically, installation of ExM Studio is simple. The first section describes how to install a software package for PSF generation, and ExM deconvolution binaries. The second section describes how to install TeraStitcher which is a free tool for fast automatic 3D-stitching of Teravoxel-sized tiled microscopy images.
@@ -100,7 +96,6 @@ ExM-Studio/
 \-stitching/                        # Folder to contain stitching package
 ```
     
-
 ## **Deconvolution**
 
 This section describes how to install NVIDIA driver, CUDA toolkit library, software package for PSF generation, and ExM deconvolution.
@@ -122,7 +117,7 @@ NVIDIA driver is a kernel module for controlling GPUs. If you don't have NVIDIA 
 1. Stop X server if you use GUI on Linux 
  - `$ sudo init 3`
 1. Run the installation script
- - `$ sudo sh NVIDIA-Linux-x86\_xxx.xx.run  (xxx.xx is driver version)`
+ - `$ sudo sh NVIDIA-Linux-x86\_xxx.xx.run`  (xxx.xx is driver version)
 1. Reboot a server 
  - `$ sudo reboot`
 
