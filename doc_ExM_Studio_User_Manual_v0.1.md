@@ -124,6 +124,8 @@ In this version, ExM deconvolution only supports 3D uint16 data of image and PSF
 |     MATLAB mex file for deconvolution |
 |     Input:        img                                 3D image data (uint16) for deconvolution        psf                                   PSF volume (uint16) applied        iters                                # of iterations in Richardson-Lucy deconvolution    Output:        deconv\_img                  deconvolved image (uint16)  |
 
+
+
 #### Example:
 
 Using a command line:
@@ -156,22 +158,23 @@ The guide is intended to act as a supplement to TeraStitcher's GitHub wiki locat
 
 To import data automatically the input data must be arranged in a two level directory hierarchy where the directory names have information about the mechanical displacement of the microscope between image captures. The root directory of the raw data should contain folders with 6 digit names. These represent the displacement in tenths of microns along the first dimension (which dimension can be specified in the input step). These directories each contain another set of directories representing displacement along the second dimension. They have names of 6 digits (same digits as parent directory) followed by an underscore followed by another 6 digits representing displacement in microns along the second dimension. Each of these folders then contain a set of TIFF files again with 6 digit names representing the depth displacement. For more information please see TeraStitcher's description at [https://github.com/abria/TeraStitcher/wiki/Supported-volume-formats#two-level-hierarchy-of-folders](https://github.com/abria/TeraStitcher/wiki/Supported-volume-formats#two-level-hierarchy-of-folders). It is possible to manually import data by producing a XML file describing the data however this is not recommended for most users.  Additionally, the user running TeraStitcher needs to have write permissions to this directory as some metadata is saved in the root directory of the input.
 
-| dataRoot/ |
-| --- |
-|   |- 069000/ |
-|   |   |- 069000\_151000/ |
-|   |   |   |- 145560.tif |
-|   |   |   \- ... |
-|   |   \- 069000\_154000/ |
-|   |       |- 145560.tif |
-|   |       \- ... |
-|   \- 072000/ |
-|       |- 072000\_151000/ |
-|       |   |- 145560.tif |
-|       |   \- ... |
-|       \- 072000\_154000/ |
-|           |- 145560.tif |
-|           \- ... |
+```
+dataRoot/  
+  |-069000/  
+  |   |-069000\_151000/             
+  |   |   |-145560.tif
+  |   |   \-...
+  |   \─069000\_154000/
+  |       |-145560.tif
+  |       |-...
+  \-072000/
+      |-072000\_151000/
+      |   |-145560.tif
+      |   \-...
+      |-072000\_154000/
+          |- 145560.tif 
+          \- ... 
+```
 
 Example Layout for a 2x2 Grid
 
@@ -196,8 +199,8 @@ This step generates an XML file describing the input volume and contains informa
   - `--volin`
 - Reference system
   - Specifies what the levels in the folder hierarchy represent. Valid options are x, y, v, h as well as negative of each of these. For example `--ref1=y --ref2=-x` would specify the top level directory represents ascending rows and the inner directory represents descending columns. This would be equivalent to `--ref1=v --ref2=-h` (vertical and negative horizontal).
-  - `--ref1`
-  - `--ref2`
+    - `--ref1`
+    - `--ref2`
   - `--ref3` must be either d or z
 - Voxel dimensions represent the size in microns along each dimension. This relates to field of view of the microscope.
   - `--vxl1`
@@ -206,11 +209,10 @@ This step generates an XML file describing the input volume and contains informa
 
 This step also produces 2 files in the root of the input data folder:
 
-- bin which contains additional binary data used by subsequent steps.
+- mdata.bin which contains additional binary data used by subsequent steps.
 - test\_middle\_slize.tiff which contains an unstitched version of the middle depth of the input volume. This image is useful for verifying the correctness of the input parameters of this step.
 
 ##### Step 2: Displacement Computation
-
 This step computes an initial displacement between tiles in the input. The step is a computationally heavy step as it requires reading every file in the input. The input parameters are:
 - Operation to run
   - `--displcompute`
@@ -220,27 +222,20 @@ This step computes an initial displacement between tiles in the input. The step 
 Additionally, this step, in the command line only version, has some GPU acceleration which is enabled by setting the environment variable `USECUDA\_X\_NCC=1.`
 
 ##### Step 3: Project Displacement
-
 The initial computation of displacement produces a set of possible displacements. This refines them down to 1 displacement per set of tiles.
 - Operation to run
   - `--displproj`
-
 ##### Step 4: Threshold Displacement
-
 Each displacement has a reliability score in range [0 1]. This step replaces displacements that have a low reliability score with the mechanical displacements.
 - Operation to run
   - `--displthres`
 - Threshold which displacements must meet
   - `--threshold` good starting value is 0.7; affects accuracy of algorithm
-
 ##### Step 5: Place Tiles
-
 Final displacement optimization; makes displacements globally consistent meaning any cycle of displacements will sum to 0. Currently uses the minimum spanning tree algorithm.
 - Operation to run
   - `--placetiles`
-
 ##### Step 6: Merge tiles
-
 Uses the optimized displacements to generate a stitched volume. The stitched volume is contained in a folder named RES(XxYxZ) where X Y and Z are the dimensions of the stitched volume. The folder hierarchy similar to what is expected as input. However, the output only has a single row and column directory. The innermost directory contains a set of large TIFF files which are slices across the entire volume iterating over the depth. This step also loads all input images making it a computationally expensive step.
 - Operation to run
   - `--merge`
