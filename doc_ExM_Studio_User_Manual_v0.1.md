@@ -119,12 +119,12 @@ In this version, ExM deconvolution only supports 3D uint16 data of image and PSF
 #### Usage:
 
 | exmDeconv img psf iters outputImg  (on shell) |
-| --- |
+| :--- |
 | &emsp; A command line of ExM deconvolution |
-| &emsp; Input:<br>  &emsp; &emsp; img &emsp; &emsp; &emsp; &emsp; &emsp; Path to TIFF file of 3D image data (uint16) for deconvolution <br>  &emsp; &emsp; psf &emsp; &emsp; &emsp; &emsp; &emsp; Path to TIFF file of PSF volume (uint16) applied <br>  &emsp; &emsp;iters &emsp; &emsp; &emsp; &emsp; &emsp; # of iterations in Richardson-Lucy deconvolution <br>  &emsp;Output: <br>  &emsp; &emsp; outputImg &emsp; &emsp; &emsp; &emsp; &emsp;Path of TIFF file (uint16) to save deconvolved image to  |
+| &emsp; Input:<br>  &emsp; &emsp; img &emsp; &emsp; &emsp; &emsp; &emsp; Path to TIFF file of 3D image data (uint16) for deconvolution <br>  &emsp; &emsp; psf &emsp; &emsp; &emsp; &emsp; &emsp; Path to TIFF file of PSF volume (uint16) applied <br>  &emsp; &emsp;iters &emsp; &emsp; &emsp; &emsp; &emsp; # of iterations in Richardson-Lucy deconvolution <br>  &emsp;Output: <br>  &emsp; &emsp; outputImg &emsp;  &emsp;Path of TIFF file (uint16) to save deconvolved image to  |
 | deconv\_img = exmDeconv(img, psf, iters)   (on MATLAB) |
 | &emsp;MATLAB mex file for deconvolution |
-| &emsp;Input:<br> img &emsp; &emsp; &emsp; &emsp; &emsp; 3D image data (uint16) for deconvolution <br> psf &emsp; &emsp; &emsp; &emsp; &emsp; PSF volume (uint16) applied <br> iters &emsp; &emsp; &emsp; &emsp; &emsp; # of iterations in Richardson-Lucy deconvolution <br>    Output: <br> deconv\_img &emsp; &emsp; &emsp; &emsp; &emsp; deconvolved image (uint16)  |
+| &emsp;Input:<br>  &emsp; &emsp; img &emsp; &emsp; &emsp; &emsp; &emsp; 3D image data (uint16) for deconvolution <br> &emsp; &emsp; psf &emsp; &emsp; &emsp; &emsp; &emsp; PSF volume (uint16) applied <br> &emsp; &emsp; iters &emsp; &emsp; &emsp; &emsp; &emsp; # of iterations in Richardson-Lucy deconvolution <br> &emsp; Output: <br> &emsp; &emsp; deconv\_img  &emsp; &emsp; deconvolved image (uint16)  |
 
 
 
