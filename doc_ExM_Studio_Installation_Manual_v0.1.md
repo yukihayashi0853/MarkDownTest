@@ -97,14 +97,14 @@ This chapter describes each module functions, usage, and example in ExM Studio, 
 ExM-Studio/  
 └─ deconv/                          # For ExM deconvolution package
 |   └─ bin/  
-|   |   ├─exmDeconv                # Command line
-|   |   ├─exmDeconv.mexa64         # Mex file for MATLAB
-|   |   \─PSFGenerator.jar         # Jar file for PSF generation (not included)
+|   |   ├─exmDeconv                 # Command line
+|   |   ├─exmDeconv.mexa64          # Mex file for MATLAB
+|   |   \─PSFGenerator.jar          # Jar file for PSF generation (not included)
 |   ├─lib/
-|   |   \─libexm_deconvolution.so  # Library of deconv engine |
+|   |   \─libexm_deconvolution.so   # Library of deconv engine |
 |   \-config/
-|       \-config.txt               # Configuration file for PSF Generator
-\-stitching/                       # Folder to contain stitching package
+|       \-config.txt                # Configuration file for PSF Generator
+\-stitching/                        # Folder to contain stitching package
 ```
     
 
@@ -120,11 +120,11 @@ NVIDIA driver is a kernel module for controlling GPUs. If you don&#39;t have NVI
     1. Open NVIDIA DOWNLOAD DRIVERS page: [https://www.nvidia.com/Download/index.aspx](https://www.nvidia.com/Download/index.aspx) on web browser
     1. Select your own GPU type, for example, RTX-2080:
         1. Select &#39;GeForce&#39; in a pull-down menu of &#39;Product Type&#39;
-        2. Select &#39;GeForce RTX 20 Series&#39; in a pull-down menu of &#39;Product Series&#39;
-        3. Select &#39;GeForce RTX 2080&#39; in a pull-down menu of &#39;Product&#39;
-        4. Select &#39;Linux 64-bit&#39; in a pull-down menu of &#39;Operating System&#39;
-        5. Select &#39;English (US)&#39; in a pull-down menu of &#39;Language&#39;
-        6. Click &#39;SEARCH&#39; button
+        1. Select &#39;GeForce RTX 20 Series&#39; in a pull-down menu of &#39;Product Series&#39;
+        1. Select &#39;GeForce RTX 2080&#39; in a pull-down menu of &#39;Product&#39;
+        1. Select &#39;Linux 64-bit&#39; in a pull-down menu of &#39;Operating System&#39;
+        1. Select &#39;English (US)&#39; in a pull-down menu of &#39;Language&#39;
+        1. Click &#39;SEARCH&#39; button
     1. Click &#39;DOWNLOAD&#39; button, and open a new page for download
     1. Click &#39;DOWNLOAD&#39; button
 1. Stop X server if you use GUI on Linux 
