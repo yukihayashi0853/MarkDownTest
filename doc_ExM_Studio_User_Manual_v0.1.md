@@ -63,11 +63,9 @@ In this version, ExM deconvolution only supports 3D uint16 data as input. Please
 |     Create GUI for PSF configuration. Parameters on GUI are stored in PSFGenerator |
 |   |
 | **psf = PSFGenerator.get** |
-|     Create PSF Volume data using internally stored parameters|
-|      Output:        |
-|        &nbsp; psf                                 3D matrix of PSF volume (uint16)  |
+|     Create PSF Volume data using internally stored parameters<br> Output:<br> &nbsp; psf        3D matrix of PSF volume (uint16)  |
 | **psf = PSFGenerator.compute(config\_filename)** |
-|     Create PSF Volume data using parameters in a configuration file    Input:        Config\_filename          configuration filename for PSF Generator    Output:        psf                                  3D matrix of PSF volume (uint16) |
+|     Create PSF Volume data using parameters in a configuration file <br> Input: <br> &nbsp; Config\_filename          configuration filename for PSF Generator <br> Output: <br> &nbsp; psf                                  3D matrix of PSF volume (uint16) |
 
 #### Example:
 
